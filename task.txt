@@ -1,0 +1,23 @@
+
+
+InputPattern.html 
+
+No.  [  5  ] 
+
+[submit] 
+
+
+server - PatternServlet -> output -> browser 
+
+		1 
+		12
+		123
+		1234
+		12345
+		
+-------------------------------------------------------
+
+
+
+
+
