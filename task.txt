@@ -17,6 +17,37 @@ server - PatternServlet -> output -> browser
 		
 -------------------------------------------------------
 
+add validation in above program 
+
+1) if no is blank then take 5 as number 
+2) if user input string then you have to print msg > please enter valid number 
+3) if user input special symbols > default 5 symbol print 
+
+InputPattern.html 
+
+No.  [  *  ] 
+
+[submit] 
+
+
+*
+**
+***
+****
+*****
+
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
 
 
 

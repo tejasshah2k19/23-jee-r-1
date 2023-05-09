@@ -19,23 +19,31 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 
 		response.setContentType("text/html"); // MIME Type
-		// application/pdf
-//
-//		int a = 100;
-//		int b = 0;
-//		int c = a / b; // ArithmeticException
-//		System.out.println(c);
-
 		PrintWriter out = response.getWriter();// IO -> connection fail -> runtime error -> exception
-
 		out.println("<html><body>");
 
-		out.print("Email : " + email);
+		boolean isError = false;
+		String error = "";
 
-		out.print("<br>");
+		if (email == null || email.trim().length() == 0) {
+			isError = true;
+			error = error + "Please Enter Email<br>";
+		}
 
-		
-		out.print("Password : " + password);
+		if (password == null || password.trim().length() == 0) {
+			isError = true;
+			error = error + "Please Enter Password<br>";
+		}
+
+		if (isError == true) {
+			out.print("<font color='red'>"+error+"</font>");
+		} else {
+			out.print("Email : " + email);
+			out.print("<br>");
+			out.print("Password : " + password);
+
+		}
+
 		out.print("</body></html>");
 
 	}
