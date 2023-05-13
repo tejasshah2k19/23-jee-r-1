@@ -38,6 +38,30 @@ No.  [  *  ]
 
 -------------------------------------------------------
 
+	First Name
+	
+	LAstName
+
+	Email
+
+	Password
+
+	Gender : radio 
+
+	City    : select 
+
+	Hobby :	 X  Y  Z A B  -> checkbox 
+
+		
+		[ Submit ] 
+
+
+	FirstName : X 
+	LAstNAme :  X 
+
+-------------------------------------------------------------------------
+
+
 
 
 
