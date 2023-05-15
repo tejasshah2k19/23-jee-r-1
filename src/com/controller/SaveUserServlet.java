@@ -14,7 +14,9 @@ public class SaveUserServlet extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
         
-		  
+		String gender = request.getParameter("gender");
+		String hobby[]  = request.getParameterValues("hobby"); // 1 
+		
 	}
 }
 // Void 
