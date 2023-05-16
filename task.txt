@@ -37,8 +37,37 @@ No.  [  *  ]
 *****
 
 -------------------------------------------------------
+<<<<<<< HEAD
  
  
+=======
+
+	First Name
+	
+	LAstName
+
+	Email
+
+	Password
+
+	Gender : radio 
+
+	City    : select 
+
+	Hobby :	 X  Y  Z A B  -> checkbox 
+
+		
+		[ Submit ] 
+
+
+	FirstName : X 
+	LAstNAme :  X 
+
+-------------------------------------------------------------------------
+
+
+
+>>>>>>> ccc289514dc5beed240022ec924e5bbdc19f2bb6
 
 
 
