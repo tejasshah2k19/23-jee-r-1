@@ -24,20 +24,21 @@ public class RegistrationServlet extends HttpServlet {
 
 		if (firstName == null || firstName.trim().length() == 0) {
 			isError = true;
-			errorMsg += "Please Enter FirstName<br>";
+			request.setAttribute("firstNameError", "Please Enter FirstName"); 
 		}
 		if (email == null || email.trim().length() == 0) {
 			isError = true;
-			errorMsg += "Please Enter Email<br>";
+			request.setAttribute("emailError", "Please Enter Email"); 
 		}
 		if (password == null || password.trim().length() == 0) {
 			isError = true;
-			errorMsg += "Please Enter Password<br>";
+			 request.setAttribute("passwordError", "Please Enter Password");
 		}
 
 		if (isError == true) {
 			// go back
-			// Registration.jsp
+			// Registration.jsp 
+			
 			RequestDispatcher rd = request.getRequestDispatcher("Registration.jsp");
 			rd.forward(request, response); // Registration.jsp
 		} else {
