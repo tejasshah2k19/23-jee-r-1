@@ -83,8 +83,26 @@ No.  [  *  ]
 				
 				
 				
-				
-				
+		test 
+		t20 
+
+		
+		XXX@XXXX.XX 
+		regex 		
+		
+--------------------------------------------------------------------
+
+	1) password -> min 8 , 1) lower 2) upper 3) digit 4) special 
+	2) password -> strength 
+					[ 1 - 5 ] => 2 
+					[ repeat ] => 5 
+					
+					Tejas@123 => 2 
+					Tejas@Shah@123 => 4
+					Tejas@Shah@12_3=> 5 
+					 
+					 
+						
 				
 				
 				

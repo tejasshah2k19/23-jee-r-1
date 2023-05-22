@@ -9,40 +9,49 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.util.Validators;
+
 @WebServlet("/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		String firstName = request.getParameter("firstName");
+		String firstName = request.getParameter("firstName"); // t20 8
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 
 		boolean isError = false;
-		String errorMsg = "";
 
-		if (firstName == null || firstName.trim().length() == 0) {
+		if (Validators.isEmpty(firstName) == true) {
 			isError = true;
-			request.setAttribute("firstNameError", "Please Enter FirstName"); 
-		}else {
+			request.setAttribute("firstNameError", "Please Enter FirstName");
+		} else {
+			// t20
+			 if(Validators.isAlpha(firstName) == false) {
+				 request.setAttribute("firstNameError","Please Enter Valid FirstName");
+			 }
 			request.setAttribute("firstNameValue", firstName);
+			
 		}
-		if (email == null || email.trim().length() == 0) {
+		if (Validators.isEmpty(email) == true) {
 			isError = true;
-			request.setAttribute("emailError", "Please Enter Email"); 
-		}else {
+			request.setAttribute("emailError", "Please Enter Email");
+		} else {
+			if(Validators.isEmail(email) == false) {
+				request.setAttribute("emailError", "Please Enter Valid Email");
+			}
 			request.setAttribute("emailValue", email);
 		}
-		if (password == null || password.trim().length() == 0) {
+		if (Validators.isEmpty(password) == true) {
 			isError = true;
-			 request.setAttribute("passwordError", "Please Enter Password");
+			request.setAttribute("passwordError", "Please Enter Password");
 		}
 
 		if (isError == true) {
 			// go back
-			// Registration.jsp 
-			
+			// Registration.jsp
+
 			RequestDispatcher rd = request.getRequestDispatcher("Registration.jsp");
 			rd.forward(request, response); // Registration.jsp
 		} else {

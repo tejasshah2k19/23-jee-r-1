@@ -9,6 +9,7 @@
 <body>
 
 <%
+	// this is an example of scriptlet 
 	String firstNameError  =(String) request.getAttribute("firstNameError"); //if not present -> NULL
 	String emailError  =(String) request.getAttribute("emailError"); //if not present -> NULL
 	String passwordError  =(String) request.getAttribute("passwordError"); //if not present -> NULL
@@ -18,6 +19,9 @@
 	
 
 %>
+
+
+<!--  this is form  -->
 
 	<form method="post" action="RegistrationServlet">
 
