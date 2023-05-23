@@ -5,6 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Registration</title>
+<style type="text/css">
+.error{
+	color: red;
+}
+</style>
+
 </head>
 <body>
 
@@ -30,7 +36,9 @@
 		<br>
 		
 		
-		<BR> Email : <input type="text" name="email" value="<%=emailValue==null?"":emailValue %>" /><%=emailError==null?"":emailError %>
+		<BR> Email : <input type="text" name="email" value="<%=emailValue==null?"":emailValue %>" />
+		
+		<span class="error"><%=emailError==null?"":emailError %></span>
 		
 		 <br>
 		<BR> Password : <input type="text" name="password" /><%=passwordError==null?"":passwordError %> <br>

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bean.UserBean;
 import com.util.Validators;
 
 @WebServlet("/RegistrationServlet")
@@ -25,7 +26,7 @@ public class RegistrationServlet extends HttpServlet {
 
 		if (Validators.isEmpty(firstName) == true) {
 			isError = true;
-			request.setAttribute("firstNameError", "Please Enter FirstName");
+			request.setAttribute("firstNameError", "<font color='red'>Please Enter FirstName</font>");
 		} else {
 			// t20
 			 if(Validators.isAlpha(firstName) == false) {
@@ -57,7 +58,14 @@ public class RegistrationServlet extends HttpServlet {
 		} else {
 			// go ahead
 			// Login.jsp
-			RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+			UserBean user = new UserBean();
+			user.setFirstName(firstName);
+			user.setEmail(email);
+			user.setPassword(password);
+			
+			request.setAttribute("user", user);
+
+			RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
 			rd.forward(request, response);
 		}
 
