@@ -104,9 +104,30 @@ No.  [  *  ]
 ------------------------------------------------------------------------
 
 
+Product -> add 
+
+
+NewProduct.jsp 
 					 
-						
+	Name : 
+	Price : 
+	Qty : 
+	Category : 
+	ProductId : random 
+							
 				
+				Submit 
+				
+SaveProductServlet 
+
+	read / getParameter 
+	validation 
+	
+	Success 
+	
+	Back -> error 
+	
+	
 				
 				
 				
