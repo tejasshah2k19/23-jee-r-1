@@ -20,12 +20,12 @@
 
 	<form action="SaveProductServlet" method="post">
 		Name : <input type="text" name="name"
-			value="<%=product.getName() == null ? "" : product.getName()%>" />
+			value="<%=product == null? "" : product.getName()%>" />
 		<%=nameError == null ? "" : nameError%>
 		<br> <br> Price : <input type="number" name="price" /><br>
 		<br> Qty : <input type="number" name="qty" /><br> <br>
 		Category : <input type="text" name="category"
-			value="<%=product.getCategory() == null ? "" : product.getCategory()%>" />
+			value="<%=product == null ? "" : product.getCategory()%>" />
 		<%=categoryError == null ? "" : categoryError%>
 		<br> <br> <input type="submit" value="SaveProduct" />
 	</form>

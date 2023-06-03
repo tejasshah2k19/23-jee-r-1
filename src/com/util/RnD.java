@@ -1,8 +1,12 @@
 package com.util;
 
 public class RnD {
-
+	
 	public static void main(String[] args) {
+		System.out.println(Runtime.getRuntime().availableProcessors());
+	}
+
+	public static void main1(String[] args) {
 
 		String name = "ram";
 		String name2 = "ram2";

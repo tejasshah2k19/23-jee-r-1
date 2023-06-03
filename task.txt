@@ -128,19 +128,170 @@ SaveProductServlet
 	Back -> error 
 	
 	
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-						
-		
+----------------------------------------------------------
+
+webapp -> 
 	
+	webpage 
+	
+	www.abc.com 
+	
+		script/virus => execute -> computer 
+		
+	website->execute-> 
+	java --- applet {run}	
+	
+	
+	CGI -> website 		
+	1	user ---> request --> 1 object --> allocate ---> xyz --> server --> response --> deallocate  
+
+	500 user --> request --> 500 object 
+
+	4 GB RAM  X 2 
+	500 GB 
+	 
+
+
+	jsp-servlet 
+	
+	servlet 
+	
+	
+	
+	1-- > request ----> server --> object : thread --> process --> response --> 
+	2-->  request ---> server ---> thread : process ---> response --->
+	
+	
+	500 request -> 500 thread -> light weighted process 
+										allocate 
+										db : sync 
+	
+	obj 50 mb -> 500 +200 {heap}{gc}{jvm}{ram}
+	
+
+	
+	lifecycle 
+	
+	1) Load class : 1 
+	2) create instance : 1  
+	3) init() : 1  { db api google } 
+	4) service() : N 
+	5) destroy() : 1 
+	 
+--------------------------------------------------------------------------------
+
+ProductBean
+	productId --> random 
+	name 
+	price 
+	qty
+	category 
+	
+	getter
+	setter 
+	
+	main 
+			3 product instance 
+			
+			ProductBean p1 = new ProductBean(); 
+ 
+			p1.getData();//you can take input using any approach 
+			ArrayList 
+			ArrayList<ProductBean> products = new ArrayList<>();
+			products.add(p1); 
+			
+			print from that array list 
+			
+------------------------------------------------------------------------------------			
+	2 -> addition 
+			
+	20 -> addition -> 20 variable ? array 
+					
+	50-> 20 =>30
+	20-> 50 => 
+	
+	int a[] = new int[20]; 
+	
+	 				
+	collection -> 			
+				
+	List				Set     			Queue				Map 
+	 duplicate			no duplicate		duplicate			key,value 
+	 																value can be duplicate	
+	 unsorted 			sort 				PQ ->Sort 				
+						HashSet -> unSorted 					TreeMap -> sorted 
+						TreeSet -> Sorted 						HashMap -> unsorted 
+	Flipkart 
+	
+		LEd TV 
+		500 -> db -> mobile -> web ->   
+    
+    	mouse 
+    	200 -> db -> mobile | web 
+    	
+		
+		
+--------------------------------------------------------------------------------
+		
+				
+	JDBC --> api --> lib  -> .class -> zip -> .jar 
+	
+	
+	java api -> Scanner Math String system File Path 
+	
+	
+	jdbc api ->Connection , Statement , PreparedStatuement , ResultSet , CallableStatment -> database 
+				Connection , ST / PT , RS 
+				
+	Gmap Api -> X X X X X -> map
+	
+	nse api -> X X X  X X -> share market data -> equity , F&O , mf   
+							
+		
+------------------------------------------------------------
+
+	java -> database -> computer -> username -> password -> 
+ 			mysql / test -> localhost -> root , root -> 
+ 				
+ 
+ 	mysql-connector -> lib -> mysql -> .class => java -> db 
+
+
+	java --> mysql db connection 
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
 
 
 
