@@ -259,6 +259,37 @@ ProductBean
 
 	java --> mysql db connection 
 	
+------------------------------------------------
+
+db connection -->
+
+		Signup => insert users 
+		
+		Product => insert products 
+
+
+Connection con -> hold your database connection y db
+
+
+1)Statement -> 
+2)PreparedStatement ->
+SQL	create , drop , alter , insert update delete select 
+
+
+how quer db ->  
+	select * from users; ==> 
+	
+		1) check syntax 
+		2) parser 
+		3) optimizer 
+
+cache -> db 
+
+
+
+3)PL/SQL => CallableStatement 
+	
+
 
 
 

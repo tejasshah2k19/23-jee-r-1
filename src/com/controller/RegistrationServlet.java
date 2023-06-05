@@ -1,6 +1,10 @@
 package com.controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.UserBean;
+import com.util.DbConnection;
 import com.util.Validators;
 
 @WebServlet("/RegistrationServlet")
@@ -29,17 +34,17 @@ public class RegistrationServlet extends HttpServlet {
 			request.setAttribute("firstNameError", "<font color='red'>Please Enter FirstName</font>");
 		} else {
 			// t20
-			 if(Validators.isAlpha(firstName) == false) {
-				 request.setAttribute("firstNameError","Please Enter Valid FirstName");
-			 }
+			if (Validators.isAlpha(firstName) == false) {
+				request.setAttribute("firstNameError", "Please Enter Valid FirstName");
+			}
 			request.setAttribute("firstNameValue", firstName);
-			
+
 		}
 		if (Validators.isEmpty(email) == true) {
 			isError = true;
 			request.setAttribute("emailError", "Please Enter Email");
 		} else {
-			if(Validators.isEmail(email) == false) {
+			if (Validators.isEmail(email) == false) {
 				request.setAttribute("emailError", "Please Enter Valid Email");
 			}
 			request.setAttribute("emailValue", email);
@@ -62,7 +67,27 @@ public class RegistrationServlet extends HttpServlet {
 			user.setFirstName(firstName);
 			user.setEmail(email);
 			user.setPassword(password);
-			
+
+			// insert
+
+			// java ----> mysql
+
+			try {
+
+				Connection con = DbConnection.getConnection();
+				System.out.println("dbConnected");
+				PreparedStatement pstmt = con
+						.prepareStatement("insert into users (firstName,email,password ) values (?,?,?)");
+				pstmt.setString(1, firstName);
+				pstmt.setString(2, email);
+				pstmt.setString(3, password);
+
+				pstmt.executeUpdate(); // update => change the state of database -->
+
+			} catch (SQLException e) {
+				System.out.println(e.getMessage());
+			}
+
 			request.setAttribute("user", user);
 
 			RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
