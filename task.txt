@@ -270,7 +270,7 @@ db connection -->
 
 Connection con -> hold your database connection y db
 
-
+DDL DML 
 1)Statement -> 
 2)PreparedStatement ->
 SQL	create , drop , alter , insert update delete select 
