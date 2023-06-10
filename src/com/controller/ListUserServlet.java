@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dao.UserDao;
 import com.util.DbConnection;
 
 @WebServlet("/ListUserServlet")
@@ -23,21 +24,22 @@ public class ListUserServlet extends HttpServlet {
 
 		// db users-> read -> 4 record
 		try {
-			// connection
-			Connection con = DbConnection.getConnection();
-			// prepared statement
-			PreparedStatement pstmt = con.prepareStatement("select * from users");
-
-			// executeUpdate() --> insert update delete
-			// executeQuery() -->select -->read only
-
-			ResultSet data = pstmt.executeQuery();
+//			// connection
+//			Connection con = DbConnection.getConnection();
+//			// prepared statement
+//			PreparedStatement pstmt = con.prepareStatement("select * from users");
+//
+//			// executeUpdate() --> insert update delete
+//			// executeQuery() -->select -->read only
+//
+//			ResultSet data = pstmt.executeQuery();
 
 			// non primitive -> array class enum object
 			// primitive -> byte short char int long float double boolean
 
 			// data -> record -> extract -> browser print
-
+			UserDao userDao = new UserDao();
+			ResultSet data =  userDao.getAllUsers();
 			response.setContentType("text/html"); // text/html -> MIME
 			PrintWriter out = response.getWriter();
 

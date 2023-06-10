@@ -290,9 +290,26 @@ cache -> db
 3)PL/SQL => CallableStatement 
 	
 
+----------------------------------------
 
+WEB app -> 
+			MVC 
+				model --> data { bean: { temp data store }  | dao : { db query }  }  
+				view --> user {input | output } { html | jsp } { frontend } : webcontent/webapp
+				controller --> logic ->servlet  
+				
 
-
+facebook -> 
+		facebook.com 
+				Login.jsp-> view -> input -> submit 
+						->server -> process -> response{view} 
+				Home.jsp -> view 
+				
+	web browser -> view -> html . jsp . images . audio . video 
+	
+	
+	
+	
 
 
 

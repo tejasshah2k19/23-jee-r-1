@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bean.UserBean;
+import com.dao.UserDao;
 import com.util.DbConnection;
 import com.util.Validators;
 
@@ -55,42 +56,16 @@ public class RegistrationServlet extends HttpServlet {
 		}
 
 		if (isError == true) {
-			// go back
-			// Registration.jsp
-
+	 
 			RequestDispatcher rd = request.getRequestDispatcher("Registration.jsp");
 			rd.forward(request, response); // Registration.jsp
 		} else {
-			// go ahead
-			// Login.jsp
-			UserBean user = new UserBean();
-			user.setFirstName(firstName);
-			user.setEmail(email);
-			user.setPassword(password);
-
-			// insert
-
-			// java ----> mysql
-
-			try {
-
-				Connection con = DbConnection.getConnection();
-				System.out.println("dbConnected");
-				PreparedStatement pstmt = con
-						.prepareStatement("insert into users (firstName,email,password ) values (?,?,?)");
-				pstmt.setString(1, firstName);
-				pstmt.setString(2, email);
-				pstmt.setString(3, password);
-
-				pstmt.executeUpdate(); // update => change the state of database -->
-
-			} catch (SQLException e) {
-				System.out.println(e.getMessage());
-			}
-
-			request.setAttribute("user", user);
-
-			RequestDispatcher rd = request.getRequestDispatcher("Home.jsp");
+		 
+			UserDao userDao = new UserDao();
+			userDao.addUser(firstName, email, password);
+			
+ 
+			RequestDispatcher rd = request.getRequestDispatcher("ListUserServlet");
 			rd.forward(request, response);
 		}
 
