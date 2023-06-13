@@ -1,20 +1,18 @@
 package com.controller;
 
-import java.awt.image.RescaleOp;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bean.UserBean;
 import com.dao.UserDao;
-import com.util.DbConnection;
 
 @WebServlet("/ListUserServlet")
 public class ListUserServlet extends HttpServlet {
@@ -24,34 +22,37 @@ public class ListUserServlet extends HttpServlet {
 
 		// db users-> read -> 4 record
 		try {
-//			// connection
-//			Connection con = DbConnection.getConnection();
-//			// prepared statement
-//			PreparedStatement pstmt = con.prepareStatement("select * from users");
-//
-//			// executeUpdate() --> insert update delete
-//			// executeQuery() -->select -->read only
-//
-//			ResultSet data = pstmt.executeQuery();
 
-			// non primitive -> array class enum object
-			// primitive -> byte short char int long float double boolean
-
-			// data -> record -> extract -> browser print
 			UserDao userDao = new UserDao();
-			ResultSet data =  userDao.getAllUsers();
-			response.setContentType("text/html"); // text/html -> MIME
-			PrintWriter out = response.getWriter();
-
-			out.print("<html><body>");
-
-			while (data.next()) { // 1 record 2nd false
-				String firstName = data.getString("firstName");
-				int userId = data.getInt("userId");
-				out.print(userId + " " + firstName + "<br><br>");
+			ResultSet data = userDao.getAllUsers();
+			//row { userId email firstName } 
+			
+			//[ {}  {}  {}  {}  {}  ]
+			
+			//ArrayList
+			
+			
+			ArrayList<UserBean> users = new ArrayList<UserBean>(); 
+			
+			while(data.next()) {
+				Integer userId = data.getInt("userId");
+				String fn = data.getString("firstName");
+				String email = data.getString("email");
+				
+				UserBean user = new UserBean();
+				user.setUserId(userId);
+				user.setFirstName(fn);
+				user.setEmail(email);
+				
+				users.add(user);
+				
+				
 			}
-
-			out.print("</body></html>");
+			
+			request.setAttribute("users", users);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("ListUser.jsp");
+			rd.forward(request, response);
 
 		} catch (Exception e) {
 

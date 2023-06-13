@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bean.RegistrationBean;
 import com.bean.UserBean;
 import com.dao.UserDao;
 import com.util.DbConnection;
@@ -56,15 +57,29 @@ public class RegistrationServlet extends HttpServlet {
 		}
 
 		if (isError == true) {
-	 
+
 			RequestDispatcher rd = request.getRequestDispatcher("Registration.jsp");
 			rd.forward(request, response); // Registration.jsp
 		} else {
-		 
+
+			RegistrationBean registrationBean = new RegistrationBean();
+			// registrationBean.email = email;
+			registrationBean.setEmail(email);
+
+			// registrationBean.firstName = firstName;
+			registrationBean.setFirstName(firstName);
+
+			// registrationBean.password = password;
+			registrationBean.setPassword(password);
+
+			// registrationBean.lastName = lastName;
+
 			UserDao userDao = new UserDao();
-			userDao.addUser(firstName, email, password);
-			
- 
+			userDao.addUser(registrationBean);// 3
+			// gender lastName
+			// address
+			// 10-12
+
 			RequestDispatcher rd = request.getRequestDispatcher("ListUserServlet");
 			rd.forward(request, response);
 		}
