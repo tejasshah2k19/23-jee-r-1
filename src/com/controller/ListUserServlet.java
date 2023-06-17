@@ -24,7 +24,7 @@ public class ListUserServlet extends HttpServlet {
 		try {
 
 			UserDao userDao = new UserDao();
-			ResultSet data = userDao.getAllUsers();
+			ArrayList<UserBean> users = userDao.getAllUsers();
 			//row { userId email firstName } 
 			
 			//[ {}  {}  {}  {}  {}  ]
@@ -32,22 +32,6 @@ public class ListUserServlet extends HttpServlet {
 			//ArrayList
 			
 			
-			ArrayList<UserBean> users = new ArrayList<UserBean>(); 
-			
-			while(data.next()) {
-				Integer userId = data.getInt("userId");
-				String fn = data.getString("firstName");
-				String email = data.getString("email");
-				
-				UserBean user = new UserBean();
-				user.setUserId(userId);
-				user.setFirstName(fn);
-				user.setEmail(email);
-				
-				users.add(user);
-				
-				
-			}
 			
 			request.setAttribute("users", users);
 			

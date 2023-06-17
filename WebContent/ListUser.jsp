@@ -30,7 +30,7 @@
 			<tD><%=user.getUserId()%></tD>
 			<td><%=user.getFirstName()%></td>
 			<td><%=user.getEmail()%></td>
-			<td>Edit | Delete</td>
+			<td>Edit | <a href="DeleteUserServlet?userId=<%=user.getUserId()%>">Delete</a></td>
 		</tr>
 
 		<%

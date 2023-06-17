@@ -4,8 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.bean.RegistrationBean;
+import com.bean.UserBean;
 import com.util.DbConnection;
 
 public class UserDao {
@@ -29,7 +31,7 @@ public class UserDao {
 
 	}
 
-	public ResultSet getAllUsers() {
+	public ArrayList<UserBean> getAllUsers() {
 		try {
 			Connection con = DbConnection.getConnection();
 			// prepared statement
@@ -39,7 +41,25 @@ public class UserDao {
 			// executeQuery() -->select -->read only
 
 			ResultSet data = pstmt.executeQuery();
-			return data;
+			
+			
+
+			ArrayList<UserBean> users = new ArrayList<UserBean>(); 
+			
+			while(data.next()) {
+				Integer userId = data.getInt("userId");
+				String fn = data.getString("firstName");
+				String email = data.getString("email");
+				
+				UserBean user = new UserBean();
+				user.setUserId(userId);
+				user.setFirstName(fn);
+				user.setEmail(email);
+				
+				users.add(user);
+				
+			}
+			return users;
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -47,5 +67,30 @@ public class UserDao {
 
 		return null;
 	}
+	
+	public void deleteUserById(int userId) {
+		try {
+
+				Connection con  = DbConnection.getConnection(); 
+				PreparedStatement pstmt = con.prepareStatement("delete from users where userId = ? ");
+				pstmt.setInt(1, userId);
+				pstmt.executeUpdate(); 
+				
+				
+		}catch(Exception e) {
+			e.printStackTrace(); 
+		}
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
