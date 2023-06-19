@@ -310,6 +310,65 @@ facebook ->
 	
 ------------------------------------------------------------------	
 	
+Signup 
+	firstname 
+
+Login 
+	credentials ->authenticate ->request.setAttribute("name",db.name);
+
+
+	Home  ->  Welcome Tejas
+	Order ->  Welcome Tejas 
+	Checkout -> 
+	Payment -> 
+	Address -> 
+
+webapp will store user's information 
+			1) cookie 
+			2) session 
+	to access on webpage 
+ 		print , use ,  
+ 		
+ 		
+cookie --> browser's storage -> use browser's memory 
+				user -> client -> browser -> memory->
+
+
+
+how to add cookie in browser ? 
+
+
+NewCookie.jsp 
+
+		Cookie Name  [      ]   userName 
+		Cookie Value [      ]	joker 
+			[submit] 
+			
+			
+			submit -> AddCookieServlet 
+			
+AddCookieServlet  [ add your give cookie into browser's cookie ] 
+
+	getParameter -> cookieName and cookieValue 
+	create cookie 
+	set cookie -> response.addCookie 
+	redirect to NewCookie.jsp
+	
+	
+	
+	
+				
+			
+
+
+
+
+
+
+
+
+
+
 
 
 
