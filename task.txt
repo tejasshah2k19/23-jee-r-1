@@ -324,8 +324,8 @@ Login
 	Address -> 
 
 webapp will store user's information 
-			1) cookie 
-			2) session 
+			1) cookie -> browser's memory fn ln email 
+			2) session -> server's memory  password , otp , cvv 
 	to access on webpage 
  		print , use ,  
  		
@@ -357,7 +357,11 @@ AddCookieServlet  [ add your give cookie into browser's cookie ]
 	
 	
 	
-				
+	Cookie c = new Cookie("userName","");
+	c.setMaxAge(0);
+	response.addCookie(c);
+	 
+					
 			
 
 

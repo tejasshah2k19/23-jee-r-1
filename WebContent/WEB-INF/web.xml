@@ -22,4 +22,34 @@
     <servlet-name>CLoginServlet</servlet-name>
     <url-pattern>/CLoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddCookieServlet</display-name>
+    <servlet-name>AddCookieServlet</servlet-name>
+    <servlet-class>com.controller.AddCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddCookieServlet</servlet-name>
+    <url-pattern>/AddCookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PrintCookieServlet</display-name>
+    <servlet-name>PrintCookieServlet</servlet-name>
+    <servlet-class>com.controller.PrintCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PrintCookieServlet</servlet-name>
+    <url-pattern>/PrintCookieServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DeleteCookieServlet</display-name>
+    <servlet-name>DeleteCookieServlet</servlet-name>
+    <servlet-class>com.controller.DeleteCookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteCookieServlet</servlet-name>
+    <url-pattern>/DeleteCookieServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
