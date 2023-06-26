@@ -363,16 +363,56 @@ AddCookieServlet  [ add your give cookie into browser's cookie ]
 	 
 					
 			
+---------------------------------
+
+user information 
+1 : cookie  -> browser -> public -> X private , security 
+2 : session -> server -> secure  -> cvv otp password token 
 
 
+create --> server 
+add 
+get 
+remove -- delete session 
+
+Login -> userId -> session --> session -> userId -> session delete
 
 
+how to Get session ?   session is created by server  
+when session is created? 
 
 
+when first request hit the server --> session created 
+
+second request --> session ? --> server 
 
 
+AUser --> request -->  JSESSIONID X          server {sessionID? valid?} -> not present create session->uniqueId-> JSESSIONID{123{userName:ram}}
+			123 JSESSIONID<---cookie<--response
 
 
+second time -> request --> JSESSIONd{123}  ---- > server {jsessionid? valid? }
+
+third time -> session-->userNam,ram ------>    server {jsessioid? valid? } --> 123
+
+
+BUser --> 456 {}  
+CUser-> 8910 
+
+
+session hijacking -> 
+
+
+------------------------------------------------
+
+
+destroy session :- 
+			1) session.invalidate() : invalidate()
+			2) web.xml -> timeout
+				<session-config>
+					<session-timeout>5</session-timeout>
+				</session-config>
+			3) setMaxInactiveInterval()
 
 
 
