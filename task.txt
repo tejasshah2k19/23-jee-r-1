@@ -414,8 +414,31 @@ destroy session :-
 				</session-config>
 			3) setMaxInactiveInterval()
 
+-------------------------------------------------------------------------
+
+reusable web component :- > inclusion -> X -> Y include --> reuse 
+
+Header.jsp
+Footer.jsp 
 
 
+		Home -> include 
+
+	1) static inclusion  -> <%@include file="Header.jsp"  %>
+	2) dynamic inclusion -> <jsp:include page="Footer.jsp" />
+
+Date Time 
+Time Date 
+Date 
+Time 
+
+jsp -> ip -> 
+
+
+static -->  X {3 line } --> Y { [copy]3 line + 4 line }  
+
+dynamic -> X --> Y  { goto x and append the output } 4 line 
+------------------------------------------------------------------------
 
 
 
