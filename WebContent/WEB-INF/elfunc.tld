@@ -1,0 +1,21 @@
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>2.0</jsp-version>
+	<uri>www.royaleducation.com/fac/tejas</uri>
+
+	<function>
+		<name>greet</name>
+		<function-class>com.elfun.GreetFun</function-class>
+		<function-signature>java.lang.String greet()</function-signature>
+	</function>
+
+	<function>
+		<name>currency</name>
+		<function-class>com.elfun.CurrElFun</function-class>
+		<function-signature>java.lang.String curr()</function-signature>
+	</function>
+
+</taglib>
+
+ 
+ 

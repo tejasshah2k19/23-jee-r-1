@@ -441,6 +441,50 @@ dynamic -> X --> Y  { goto x and append the output } 4 line
 ------------------------------------------------------------------------
 
 
+el function -> 
+
+
+Good Evening 
+
+Good Morning 
+
+Good AfterNoon 
+
+
+import java.util.Date; 
+
+Date d = new Date(); 
+
+int h  = d.getHours(); // 24 
+
+if(h >=0 && h <= 11 ){
+  // morning 
+} else if ( h >= 12 && h <= 17 ){
+ //af 
+}else{
+ // evening 
+}
+
+
+
+
+EL function --> tag : html 
+
+<b>test</b> 
+<hr> 
+
+${greet()}
+
+${} 
+
+1) .java logic {public static} 
+2) .tld 
+3) .xml {map tld }  
+4) jsp use -> import 
+
+
+
+
 
 
 
