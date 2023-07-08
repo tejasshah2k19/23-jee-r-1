@@ -482,6 +482,68 @@ ${}
 3) .xml {map tld }  
 4) jsp use -> import 
 
+---------------------------------------------------------
+
+elfunction ->   len() 
+
+${t:len("ram")} => 3 
+
+
+public static Integer len(String str){
+	
+	
+}
+
+-----------------------------------------------------------------
+FILTER:- pre process --> filter | servlet 
+client --> request ---> server -->  |  {servlet} process --> response 
+
+Signup.jsp ==>  fn ln em pwd --> submit 
+						server --> servlet -> validation db store --> Login.jsp
+											  --> redirect signup.jsp with error 
+											  
+500 request -> signup  | 250 miss -> 250 
+
+
+500 request -->  500 -> SignupFilter{validation}-> |  250 SignupServlet
+
+
+
+ICICBank -> Login.jsp -> 500 -> email password submit -> server => LoginServlet 
+
+
+
+whatsapp ->   x -> image -> y 
+			    x->30mb-> image ->{filter}image compress15MB--> {upload}-->server{15mb}-->15MB-->y{} 
+			     
+
+-----------------------------------------------------------------------------
+
+FilterSingup.jsp -> fn em pwd [ submit ] 
+
+SignupFilter -> read,validate -> good -> go ahead {Servlet} ->
+								 bad  -> go back -> Signup.jsp  
+
+FilterSignupServlet -> db,response 
+
+
+-----------------------------------------------------------------------------
+signup  -> SignupServlet 
+login   -> ip | email-password valid 
+search  -> ? | SearchServlet 
+
+
+1) class implements Filter 
+2) override method - init{} doFilter destroy{} 
+3) web.xml mapping -> servlet 
+
+
+
+
+
+
+
+
 
 
 
