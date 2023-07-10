@@ -117,4 +117,17 @@
 		<url-pattern>/FilterSignupServlet</url-pattern>
 	</filter-mapping>
 
+
+	<filter>
+		<filter-name>SignupRegExFilter</filter-name>
+		<filter-class>com.filter.SignupRegExFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>SignupRegExFilter</filter-name>
+		<url-pattern>/FilterSignupServlet</url-pattern>
+	</filter-mapping>
+
+
+
 </web-app>
