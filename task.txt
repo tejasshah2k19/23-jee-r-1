@@ -581,13 +581,35 @@ FilterSignup.jsp ->
 		fn em pwd -> submit 
 		
 SignupFilter -> fn valid -> miss -> back | go ahead 
-SignupRegExFilter -> fn valid -> format{a-zA-Z} -> back | goahead
+SignupRegExFilter -> fn valid -> format{a-zA-Z} -> back | go ahead
 
 		
 FilterSignupServlet 
 
+-------------------------------------------------------------------------------
+aws db -> connection open -> meter -> 1 minute 1 Rs 
 
-		
+
+server start -> aws db connection open  
+server stop  -> aws db connection close 
+
+fri -> db close -> 60*24*2
+
+
+site -> online -> session -> create count ++ , destroy count -- 
+
+
+Listener -> listen -> events --> session create , destroy 
+				server start , shutdown 
+				request data set
+Server -> 
+Session -> 
+
+1) class implements XXXListener -> logic 
+2) web.xml 
+
+----------------------------------------------------------------------------------
+	
 
 
 

@@ -8,6 +8,6 @@
 </head>
 <body>
 Welcome
-
+<a href="LogoutServlet">Logout</a>
 </body>
 </html>
