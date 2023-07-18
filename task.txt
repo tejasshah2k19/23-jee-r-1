@@ -616,12 +616,52 @@ Session ->
 
 
 
+<%@  directive -->
+		1) page  -> jsp 
+		2) include -> jsp inclusion - reuse 
+		3) taglib  -> elfunction ,custom , jee tag , third party tag
 
 
 
+---------------------
+servlet life cycle 
+1) load class 
+2) instance 
+3) init()--1 
+4) service()--n 
+5) destroy()--1  {server shutdown}
+
+jsp life cycle 
+jsp => servlet 
+
+.jsp -> logic 
+
+1) translation  .jsp -> .java 
+2) compilation  .java -> .class 
+3) load class 
+4) instance 
+5) jspInit()
+6) _jspService() -> tomcat 
+7) jspDestroy()
+
+--------------------------------------
+
+jstl -> java standard tag library 
+
+1) jstl.jar 
+2) import 
+3) use 
+
+
+1	core**
+2	fmt 
+3	sql 
+4	xml 
+5 	function 
 
 
 
+ 
 
 
 
