@@ -658,7 +658,29 @@ jstl -> java standard tag library
 3	sql 
 4	xml 
 5 	function 
+-----------------------------------------------------------------------------------------------------------
+age < 18
+	Less Chance 5% 
+	
+18-60
+	gender 
+     male 	female 
+     smoke        25%      
+   yes    no
+  50%     25% 
 
+age > 60 
+diabetic    &&  bp [ both are ] 
+    75%  
+only diabetic 
+   50% 
+
+only bp 
+ 65% 
+no diabetic no bp 
+ 30%  
+
+----------------------------------------------------------------------------------------------------- 
 
 
  
