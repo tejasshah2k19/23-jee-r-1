@@ -1,0 +1,28 @@
+signup -> email password firstname lastname 
+
+welcome mail -> 
+
+login -> email ,password 
+
+home -> NSE BSE -> 50 -> 
+
+Adani Enterprises Ltd.	Metals & Mining	ADANIENT	EQ	INE423A01024	2466	1017	4190		
+
+
+after 5 days 
+
+
+login -> email ,password 
+
+home -> NSE BSE -> 50 -> 
+
+Adani Enterprises Ltd.	Metals & Mining	ADANIENT	EQ	INE423A01024	2466	1017	4190		
+
+
+update -> 4PM -> rate update -> Khushil -> 4.5pm-> no rate update 
+
+
+table -> 
+	users 
+	equity  	
+---------------------------------------------------------------
