@@ -4,7 +4,7 @@
 <%@page import="java.util.Scanner,java.util.Date" session="true"
 	buffer="8kb" autoFlush="true"
 	info="this is demo jsp for page directive"%>
-<%@page isELIgnored="true" %>
+<%@page isELIgnored="true"  %>
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-
+	
 	<%
 		Scanner scr = null;
 		Date d = null;

@@ -1,3 +1,4 @@
+<%@page import="java.util.HashMap"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -13,6 +14,8 @@
 </style>
 </head>
 <body>
+ 
+ 	
 
 	<c:set var="x" value="10"></c:set>
 	<span class="data"> <c:out value="${x}"></c:out>
